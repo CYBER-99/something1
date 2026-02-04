@@ -6,8 +6,8 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: #0c0d1a;
-  color: #ffffff;
+  background: #ffe6ee;
+  color: #4a2b35;
   overflow: hidden;
 }
 
@@ -17,34 +17,33 @@ body {
   inset: 0;
   background: radial-gradient(
     circle at top,
-    #1f2147,
-    #0c0d1a 70%
+    #ffd1dc,
+    #ffe6ee 70%
   );
-  animation: pulseBg 12s ease-in-out infinite;
+  animation: breathe 10s ease-in-out infinite;
   z-index: -3;
 }
 
-@keyframes pulseBg {
-  0%, 100% { filter: brightness(1); }
-  50% { filter: brightness(1.15); }
+@keyframes breathe {
+  0%,100% { filter: brightness(1); }
+  50% { filter: brightness(1.08); }
 }
 
-/* ===== Stars ===== */
-.stars {
+/* ===== Floating petals ===== */
+.petals {
   position: fixed;
   inset: 0;
   background-image:
-    radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,.5), transparent),
-    radial-gradient(1.5px 1.5px at 80% 40%, rgba(255,255,255,.4), transparent),
-    radial-gradient(1px 1px at 50% 70%, rgba(255,255,255,.35), transparent),
-    radial-gradient(1.5px 1.5px at 30% 90%, rgba(255,255,255,.45), transparent);
-  animation: floatStars 25s linear infinite;
+    radial-gradient(6px 6px at 20% 30%, rgba(255,182,193,.5), transparent),
+    radial-gradient(5px 5px at 70% 50%, rgba(255,182,193,.4), transparent),
+    radial-gradient(4px 4px at 40% 80%, rgba(255,182,193,.35), transparent);
+  animation: floatPetals 28s linear infinite;
   z-index: -2;
 }
 
-@keyframes floatStars {
+@keyframes floatPetals {
   from { transform: translateY(0); }
-  to { transform: translateY(-60px); }
+  to { transform: translateY(-80px); }
 }
 
 /* ===== Layout ===== */
@@ -60,14 +59,14 @@ body {
 #content {
   max-width: 420px;
   text-align: center;
-  animation: sceneIn 0.9s ease;
+  animation: sceneIn .9s ease;
 }
 
 @keyframes sceneIn {
   from {
     opacity: 0;
-    transform: translateY(18px) scale(0.96);
-    filter: blur(8px);
+    transform: translateY(20px) scale(.96);
+    filter: blur(10px);
   }
   to {
     opacity: 1;
@@ -84,8 +83,8 @@ h1 {
 
 p {
   font-size: 1rem;
-  line-height: 1.7;
-  opacity: 0.88;
+  line-height: 1.75;
+  opacity: .9;
 }
 
 /* ===== Buttons ===== */
@@ -95,16 +94,16 @@ button {
   margin: 12px auto;
   padding: 14px 26px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.3);
-  background: rgba(255,255,255,.12);
-  color: white;
+  border: 1px solid rgba(200,100,120,.4);
+  background: rgba(255,255,255,.6);
+  color: #4a2b35;
   cursor: pointer;
   display: block;
   transition: all .3s ease;
 }
 
 button:hover {
-  background: rgba(255,255,255,.25);
+  background: rgba(255,255,255,.85);
   transform: translateY(-2px);
 }
 
@@ -119,16 +118,16 @@ button:hover {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(255,255,255,.25);
+  background: rgba(150,80,100,.35);
 }
 
 .dot.active {
-  background: rgba(255,255,255,.95);
+  background: rgba(150,80,100,.9);
 }
 
 /* ===== Footer ===== */
 .footer {
   margin-top: 48px;
   font-size: .75rem;
-  opacity: .55;
+  opacity: .6;
 }
